@@ -21,9 +21,9 @@
 
 ### Introdução
 
-![Fluxo da informação](./images/DiagramaEntradaSaidaSistemas.png)
-![Volume de dados](./images/DiagramaVolume.png)
-![Hierarquia](./images/DiagramaHierarquia.png)
+![Fluxo da informação](images/DiagramaEntradaSaidaSistemas.png)
+![Volume de dados](images/DiagramaVolume.png)
+![Hierarquia](images/DiagramaHierarquia.png)
 
 [Início](#Parte-1)
 
