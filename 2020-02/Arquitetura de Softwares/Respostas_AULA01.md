@@ -1,0 +1,36 @@
+# Exercícios - Aula 01 - 19/08/2020
+
+- **(01) Conceituar Engenharia de Software**
+  - R.: Engenharia de Software, diz respeito ao processo de se entender, planejar, executar e manter um projeto de software. De uma maneira em que com auxilio de ferramentas próprias ou externas, e aplicando conceitos de gestão e outras disciplinas sejam mantidos e garantidos os requisitos funcionais e não funcionais do projeto proposto, por todas as partes interessadas.
+- **(02) Diferencia Projeto de Arquitetura de Software e Arquitetura de Software**
+  - Projeto de Arquitetura de Software:
+    - Em uma perspectiva mais de alto nível se preocupa em compreender e definir quais são os componentes e qual a estrutura deve ser utilizada para desenvolver determinado sistema.
+  - Arquitetura de Software
+    - É o processo de se traduzir as caracteristicas acerca de um software para que eles façam sentido e atendam as espectativas técnicas e de negócio.
+- **(03) Cite três diagramas UML usados de maneira mais específica durante o processo de construção da arquitetura de um sistema**
+  - Diagrama de Componentes
+  - Diagrama de Implantação
+  - 
+- **(04) Apresentar cinco benefícios da Arquitetura de Software**
+  - Organização
+  - 
+- **(05) No RUP, existe alguma relação entre a disciplina de Modelagem de Negócios e a Arquitetura de Software? Justifique**
+  - R.: 
+- **(06) Nas Metotologias Ágeis (XP, SCRUM etc.) como é desenvolvida a Arquitetura de Software? Justifique**
+  - R.: 
+- **(07) Cite algumas características do Arquiteto de software.**
+  - R.: Deve ser uma pessoa experiente, com conhecimento técnico, comunicativa, organizada e que tenha domínio sobre os princípios que serão aplicados.
+- **(08) Diferenciar requisitos Funcionais e Não Funcionais**
+  - Requisitos funcionais:
+    - Requisitos que são explicitos e definem o comportamento do sistema
+  - Requisitos não funcionais:
+    - Requisitos que não explicitos que são essenciais para que os requisitos funcionais sejam atendidos. 
+- **(09) Qual é o principal diferença entre os modelos de arquitetura Cliente-Servidor e N camadas?**
+  - O modelo cliente servidor especifíca duas camadas onde uma contém de fato a lógica e outra que requisita que uma operação seja executada no modelo de N camadas, existem abstrações onde não necessáriamente existem papeis definidos sobre quem irá executar, mas sim que interfaces em comum irão operar, a lógica e as responsabilidades acabam sendo distribuídas entre as camadas 
+- **(10) Qual é o seu entendimento sobre a computação MÓVEL, PERVASIVA e UBÍQUA?**
+  - Computação móvel:
+    - Os recursos de um sistema devem estar disponíveis e devem poder, ser utilizados em qualquer lugar através de qualquer equipamento.
+  - Computação pervasiva:
+    - Diz respeito a parte da computação que trata a emergencia, onde através de sensoriamento e integrações com outros sistemas e máquinas, os componentes consigam se comunicar, interagir e adaptar.
+  - Computação Ubíqua:
+    - Tem o objetivo de tornar a interação do Usuário com o sistema de uma maneira natural, onde o usuário não perceba que está dando comandos para uma máquina.
