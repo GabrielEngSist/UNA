@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/toro" />
+
+    <TextView
+        android:id="@+id/lblVersao"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginTop="4sp"
+        android:text="VERSÃO, MOTOR E CÂMBIO"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblVersaoSelecionada"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_marginTop="4sp"
+        android:text="Nenhuma versão selecionada"
+        android:textColor="@android:color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/lblTotalVersao"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="4sp"
+        android:text="R$ 0,00"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblAcessorio"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_marginTop="4sp"
+        android:text="ACESSÓRIOS"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblAcessorioSelecionado"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="4sp"
+        android:text="Nenhuma Versão Selecionada"
+        android:textColor="@android:color/black"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblTotalAcessorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4sp"
+        android:text="R$ 0,00"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblTotalGeral"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="4sp"
+        android:text=" TOTAL R$ 0,00"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VersaoActivity">
+
+    <Button
+        android:id="@+id/btnRetornar2"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_weight="1"
+        android:text="Retornar" />
+
+    <Button
+        android:id="@+id/btnCancelar2"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_weight="1"
+        android:text="Cancelar" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RadioButton
+            android:id="@+id/rbtn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TORO FREEDOM 1.8 AT6 FLEX 4P 2019"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/lblValor1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="R$ 94.990,00"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <RadioButton
+            android:id="@+id/rbtn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TORO VOLCANO 2.4 AT9 FLEX 4P 2019"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/lblValor2"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="R$ 119.990,00"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <RadioButton
+            android:id="@+id/rbtn3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TORO RANCH 2.0 AT9 4X4 DIESEL 4P 2019"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/lblValor3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="R$ 154.990,00"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:text="Cancelar" />
+
+        <Button
+            android:id="@+id/btnRetornar"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:text="Retornar" />
+
+    </RadioGroup>
+</LinearLayout>
