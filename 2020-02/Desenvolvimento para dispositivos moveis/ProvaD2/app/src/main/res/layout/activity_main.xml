@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/lstvExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="507dp"
+        android:layout_margin="13sp" />
+
+    <TextView
+        android:id="@+id/txtTotalExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_margin="13sp"
+        android:text="@string/total_r_0_00"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/teal_700"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnCreateExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        app:layout_anchorGravity="bottom|right|end"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/inserir_uma_nova_despesa"
+        android:text="@string/cadastrar"
+        app:icon="@drawable/ic_addchart_black_24dp" />
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ExpenseCrud">
+
+    <TextView
+        android:id="@+id/tipoDespesa"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_margin="8sp"
+        android:text="@string/descri_o"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <EditText
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:autofillHints="" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_margin="8sp"
+        android:text="@string/valor_r"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <EditText
+        android:id="@+id/txtExpenseValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_margin="8sp"
+        android:autofillHints="" />
+
+    <LinearLayout
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32sp"
+        android:baselineAligned="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/inserir_uma_nova_despesa"
+            app:icon="@drawable/ic_keyboard_backspace_24px"
+            app:iconTint="#FFFFFF"
+            app:layout_anchorGravity="center" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/inserir_uma_nova_despesa"
+            app:icon="@drawable/ic_done_outline_24px"
+            app:iconTint="#FFFFFF"
+            app:layout_anchorGravity="center" />
+
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/inserir_uma_nova_despesa"
+            app:icon="@drawable/ic_delete_24px"
+            app:iconTint="#FFFFFF"
+            app:layout_anchorGravity="center" />
+    </LinearLayout>
+
+
+</LinearLayout>
