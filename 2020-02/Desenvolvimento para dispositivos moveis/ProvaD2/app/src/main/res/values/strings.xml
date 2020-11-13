@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Controle de despesas</string>
+    <string name="total_r_0_00">TOTAL: R$ 0,00</string>
+    <string name="inserir_uma_nova_despesa">inserir uma nova despesa</string>
+    <string name="cadastrar">cadastrar</string>
+    <string name="valor_r">Valor (R$)</string>
+    <string name="descri_o">Descrição</string>
+</resources>
