@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_classes">
+
+    <fragment
+        android:id="@+id/nav_classes"
+        android:name="com.example.meetchecker.ui.presences.PresenceFragment"
+        android:label="@string/menu_classes"
+        tools:layout="@layout/fragment_classes" />
+
+    <fragment
+        android:id="@+id/nav_presence"
+        android:name="com.example.meetchecker.ui.classes.ClassesFragment"
+        android:label="@string/menu_presence"
+        tools:layout="@layout/fragment_presences" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.meetchecker.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

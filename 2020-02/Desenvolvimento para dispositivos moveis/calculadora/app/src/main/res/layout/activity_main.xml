@@ -11,7 +11,7 @@
         android:id="@+id/txtDisplay"
         android:layout_width="match_parent"
         android:layout_height="81dp"
-        android:text="0"
+        android:text="0.0"
         android:textAlignment="viewEnd"
         android:textColor="#141717"
         android:textSize="24sp" />
