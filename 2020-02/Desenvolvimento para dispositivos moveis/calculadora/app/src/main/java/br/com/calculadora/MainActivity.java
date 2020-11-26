@@ -16,14 +16,11 @@ public class MainActivity extends AppCompatActivity {
     public static final String TIMES = "*";
     public static final String DIVISION = "/";
     public static final String STRING_EMPTY = "";
-    public static final String NUMERIC = "NUMERIC";
-    public static final String OPERATOR = "OPERATOR";
 
     private TextView txtDisplay;
     private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnCE, btnResult, btnTimes, btnDivision, btnPlus, btnSubtract;
     private double lastValue, result;
     private String operation = STRING_EMPTY;
-    private String lastButton = OPERATOR;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             operation = PLUS;
-            lastButton = STRING_EMPTY;
             txtDisplay.setText("0.0");
             result = 0;
             lastValue = 0;
@@ -48,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener listenerResultPressed = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            lastButton = STRING_EMPTY;
             doOperation();
             lastValue = 0;
             result = 0;
@@ -56,18 +51,19 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void doOperation() {
+        Double nextNumber = Double.parseDouble(txtDisplay.getText().toString());
         switch (operation) {
             case PLUS:
-                result += lastValue;
+                result = lastValue + nextNumber;
                 break;
             case MINUS:
-                result -= lastValue;
+                result = lastValue - nextNumber;
                 break;
             case TIMES:
-                result *= lastValue;
+                result = lastValue * nextNumber;
                 break;
             case DIVISION:
-                result = lastValue == 0 ? lastValue : result / lastValue;
+                result = lastValue / nextNumber;
                 break;
             default:
                 break;
@@ -119,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Button pressedButton = (Button) v;
             String pressedValue = pressedButton.getText().toString();
-            lastButton = NUMERIC;
             String actualValue = getActualValue();
-            txtDisplay.setText(actualValue + pressedValue);
-            lastValue = Double.parseDouble(actualValue + pressedValue);
+            String nextValue = actualValue + pressedValue;
+            txtDisplay.setText(nextValue);
+            lastValue = Double.parseDouble(nextValue);
         }
     };
 
@@ -140,10 +136,6 @@ public class MainActivity extends AppCompatActivity {
             Button botaoPressionado = (Button)v;
             txtDisplay.setText(STRING_EMPTY);
             operation = botaoPressionado.getText().toString();
-            if(!lastButton.equals(NUMERIC)){
-                doOperation();
-                lastButton = OPERATOR;
-            }
         }
     };
 }
