@@ -43,10 +43,11 @@ public class QrCodeDTO implements Serializable {
     public void setFinishDate(LocalDateTime finishDate) {
         this.finishDate = finishDate;
     }
-
+public void setSequenceNumber(Integer sequenceNumber) { this.sequenceNumber = sequenceNumber; }
     protected String id;
     protected String classId;
     protected String className;
     protected LocalDateTime startDate;
     protected LocalDateTime finishDate;
+    protected Integer sequenceNumber;
 }

@@ -13,12 +13,9 @@ import java.util.List;
 
 public class ClassRepository {
     private ClassDAO classDAO;
-
-    private LiveData<List<com.example.meetchecker.entities.Class>> allClasses;
     public ClassRepository(Application application){
         AppDatabase db = SingletonDatabase.getInstance(application);
         classDAO = db.classDAO();
-        allClasses = classDAO.getAllClasses();
     }
 
     public void insert(Class class_) {
@@ -26,6 +23,6 @@ public class ClassRepository {
     }
 
     public List<Class> getAllClasses() {
-        return allClasses.getValue();
+        return classDAO.getAllClasses();
     }
 }

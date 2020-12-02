@@ -16,6 +16,9 @@ public class Presence implements Serializable {
     @NonNull protected String guidId;
     @NonNull protected LocalDateTime date;
     @NonNull protected String classId;
+    @NonNull protected int reviewRate;
+    @NonNull protected int sequenceNumber;
+    protected String reviewText;
     public int getId() {
         return id;
     }
@@ -26,4 +29,10 @@ public class Presence implements Serializable {
     public void setDate(LocalDateTime date) { this.date = date; }
     public String getClassId() { return classId; }
     public void setClassId(String classId) { this.classId = classId; }
+    public void setReviewRate(int reviewRate){ this.reviewRate = reviewRate; }
+    public int getReviewRate() { return this.reviewRate; }
+    public void setReviewText(String reviewText){ this.reviewText = reviewText; }
+    public String getReviewText(){return this.reviewText;}
+    public void setSequenceNumber(Integer sequenceNumber){ this.sequenceNumber = sequenceNumber; }
+    public Integer getSequenceNumber(){return  this.sequenceNumber;}
 }

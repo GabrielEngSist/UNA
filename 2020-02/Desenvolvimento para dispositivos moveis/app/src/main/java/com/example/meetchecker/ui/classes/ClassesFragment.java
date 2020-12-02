@@ -1,6 +1,7 @@
 package com.example.meetchecker.ui.classes;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.meetchecker.MainActivity;
 import com.example.meetchecker.R;
 import com.example.meetchecker.adapters.ClassesToClasseItemAdapter;
+import com.example.meetchecker.entities.Class;
 
 import java.util.List;
 
@@ -25,16 +27,25 @@ public class ClassesFragment extends Fragment {
     private ClassesViewModel classesViewModel;
 
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        classesViewModel = ViewModelProviders.of(this).get(ClassesViewModel.class);
+        classesViewModel = ViewModelProviders.of(getActivity()).get(ClassesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_classes, container, false);
         final ListView minhasClasses = (ListView) root.findViewById(R.id.minhas_classes);
 
-        classesViewModel.getClasses().observe(getViewLifecycleOwner(), new Observer<List<com.example.meetchecker.entities.Class>>() {
+        new AsyncTask<Void, Void, List<Class>>(){
+
             @Override
-            public void onChanged(@Nullable List<com.example.meetchecker.entities.Class> classes) {
-                minhasClasses.setAdapter(new ClassesToClasseItemAdapter(classes, getActivity()));
+            protected List<Class> doInBackground(Void... voids) {
+                return classesViewModel.getClasses();
             }
-        });
+
+            @Override
+            protected void onPostExecute(List<Class> classes) {
+                super.onPostExecute(classes);
+                if(classes != null && classes.size() > 0){
+                    minhasClasses.setAdapter(new ClassesToClasseItemAdapter(classes, getActivity()));
+                }
+            }
+        }.execute();
 
         return root;
     }

@@ -27,4 +27,7 @@ public interface PresenceDAO {
 
     @Query("SELECT * FROM Presence WHERE guidId = :id")
     public Presence getPresenceById(String id);
+
+    @Query("SELECT MAX(sequenceNumber) FROM Presence WHERE classId =:classId")
+    public Integer getMaxSequenceNumber(String classId);
 }

@@ -28,7 +28,7 @@ public interface ClassDAO {
     public void delete(List<Class> presences);
 
     @Query("SELECT * FROM Class")
-    public LiveData<List<Class>> getAllClasses();
+    public List<Class> getAllClasses();
 
     @Query("SELECT * FROM Class WHERE guidId = :id")
     public Class getClassById(String id);

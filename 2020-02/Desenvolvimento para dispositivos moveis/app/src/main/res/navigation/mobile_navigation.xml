@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_classes"
-        android:name="com.example.meetchecker.ui.presences.PresenceFragment"
+        android:name="com.example.meetchecker.ui.classes.ClassesFragment"
         android:label="@string/menu_classes"
         tools:layout="@layout/fragment_classes" />
 
     <fragment
         android:id="@+id/nav_presence"
-        android:name="com.example.meetchecker.ui.classes.ClassesFragment"
+        android:name="com.example.meetchecker.ui.presences.PresenceFragment"
         android:label="@string/menu_presence"
         tools:layout="@layout/fragment_presences" />
 
