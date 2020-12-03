@@ -4,69 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtInfoAlarm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40sp"
         android:layout_marginTop="50sp"
         android:layout_marginRight="40sp"
-        android:text="Informe o horário desejado, para realizar o agendamento do despertador" />
+        android:text="@string/infoAlarmText"
+        android:textAlignment="center" />
 
     <EditText
-        android:id="@+id/txtHora"
-        android:layout_width="match_parent"
+        android:id="@+id/etxtTime"
+        android:layout_width="173dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40sp"
-        android:layout_marginTop="20sp"
-        android:layout_marginRight="40sp"
-        android:layout_marginBottom="20sp"
+        android:layout_gravity="center"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
+        android:gravity="center_horizontal"
+        android:inputType="time"
         android:textAlignment="center" />
 
     <CheckBox
-        android:id="@+id/btnSegunda"
+        android:id="@+id/chkMonday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"
-        android:text="Segunda" />
+        android:text="@string/segunda" />
 
     <CheckBox
-        android:id="@+id/btnTerca"
+        android:id="@+id/chkTuesday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"
-        android:text="Terca" />
+        android:text="@string/terca" />
 
     <CheckBox
-        android:id="@+id/btnQuarta"
+        android:id="@+id/chkWednesday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"
-        android:text="Quarta" />
+        android:text="@string/quarta" />
 
     <CheckBox
-        android:id="@+id/btnQuinta"
+        android:id="@+id/chkThursday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"
-        android:text="Quinta" />
+        android:text="@string/quinta" />
 
     <CheckBox
-        android:id="@+id/btnSexta"
+        android:id="@+id/chkFriday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"
-        android:text="Sexta" />
+        android:text="@string/sexta" />
 
     <CheckBox
         android:id="@+id/btnSabado"
@@ -74,23 +76,23 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"
-        android:text="Sabado" />
+        android:text="@string/sabado" />
 
     <CheckBox
-        android:id="@+id/btnDomingo"
+        android:id="@+id/chkSunday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"
-        android:text="Domingo" />
+        android:text="@string/domingo" />
 
     <Button
-        android:id="@+id/btnAgendar"
-        android:layout_width="match_parent"
+        android:id="@+id/btnSetAlarm"
+        android:layout_width="102dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40sp"
         android:layout_marginTop="20sp"
         android:layout_marginRight="40sp"
-        android:text="Agendar" />
+        android:text="@string/agendar" />
 
 </LinearLayout>

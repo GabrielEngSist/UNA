@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Alarme</string>
+    <string name="segunda">Segunda</string>
+    <string name="infoAlarmText">Informe o horário:</string>
+    <string name="terca">Terça</string>
+    <string name="quarta">Quarta</string>
+    <string name="quinta">Quinta</string>
+    <string name="sexta">Sexta</string>
+    <string name="sabado">Sábado</string>
+    <string name="domingo">Domingo</string>
+    <string name="agendar">Agendar</string>
 </resources>
