@@ -1,4 +1,4 @@
-package com.prova.alarme.utils;
+package com.br.alarm.utils;
 
 import android.os.Build;
 import android.text.Editable;

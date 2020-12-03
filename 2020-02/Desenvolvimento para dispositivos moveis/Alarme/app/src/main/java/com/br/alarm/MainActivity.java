@@ -1,7 +1,5 @@
-package com.prova.alarme;
+package com.br.alarm;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,16 +15,12 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.prova.alarme.utils.MaskEditUtil;
+import com.br.alarm.utils.MaskEditUtil;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         final SharedPreferences sp = getSharedPreferences("appAgendar", getApplicationContext().MODE_PRIVATE);
         initializeDaysOfWeek(sp);
         alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlarmReceiver.class);
+        Intent intent = new Intent(this, com.br.alarm.AlarmReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
         btnAgendar = findViewById(R.id.btnSetAlarm);

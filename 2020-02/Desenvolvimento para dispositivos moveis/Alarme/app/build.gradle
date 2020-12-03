@@ -5,8 +5,8 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.prova.alarme"
-        minSdkVersion 19
+        applicationId "com.br.alarm"
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"

@@ -1,4 +1,4 @@
-package com.prova.alarme;
+package com.br.alarm;
 
 import org.junit.Test;
 
