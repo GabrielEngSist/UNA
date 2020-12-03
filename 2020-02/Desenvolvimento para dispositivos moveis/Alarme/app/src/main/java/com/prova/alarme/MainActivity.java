@@ -1,5 +1,7 @@
 package com.prova.alarme;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +22,11 @@ import com.prova.alarme.utils.MaskEditUtil;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,28 +55,24 @@ public class MainActivity extends AppCompatActivity {
         btnAgendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(System.currentTimeMillis());
-                Long startTime = calendar.getTimeInMillis();
+
                 SharedPreferences.Editor spEditor = sp.edit();
                 spEditor.putString("daysOfWeek",  getStringFromDaysOfWeekCheckBoxList());
                 spEditor.putString("hour", etxtTime.getText().toString());
                 spEditor.apply();
                 LocalTime localTime = LocalTime.parse(etxtTime.getText());
-                calendar.add(Calendar.HOUR_OF_DAY,localTime.getHour());
-                calendar.add(Calendar.MINUTE,localTime.getMinute());
 
                 for (int i = 0; i < daysOfWeek.size() ; i++) {
-                    if(daysOfWeek.get(i).isChecked()){
+                    Calendar calendar = Calendar.getInstance();
+                    if(daysOfWeek.get(i).isChecked() && (calendar.get(Calendar.DAY_OF_WEEK) != i+1 || localTime.compareTo(LocalTime.now()) == 1) ){
+                        calendar.setTimeInMillis(System.currentTimeMillis());
+                        calendar.add(Calendar.HOUR_OF_DAY,localTime.getHour());
+                        calendar.add(Calendar.MINUTE,localTime.getMinute());
                         calendar.add(Calendar.DAY_OF_WEEK, i+1);
+                        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                     }
                 }
-
-                Long endTime = calendar.getTimeInMillis();
-                Long timeAlarm = endTime - startTime;
-
-                alarmManager.set(AlarmManager.RTC_WAKEUP, timeAlarm, pendingIntent);
-                alarmManager.setExact(AlarmManager.RTC_WAKEUP, timeAlarm, pendingIntent);
             }
         });
     }

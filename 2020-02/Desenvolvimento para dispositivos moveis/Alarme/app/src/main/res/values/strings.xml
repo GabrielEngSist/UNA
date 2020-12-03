@@ -9,4 +9,5 @@
     <string name="sabado">Sábado</string>
     <string name="domingo">Domingo</string>
     <string name="agendar">Agendar</string>
+    <string name="alarme">ALARME</string>
 </resources>
