@@ -16,9 +16,9 @@ public class Presence implements Serializable {
     @NonNull protected String guidId;
     @NonNull protected LocalDateTime date;
     @NonNull protected String classId;
-    @NonNull protected int reviewRate;
-    @NonNull protected int sequenceNumber;
+    protected int reviewRate;
     protected String reviewText;
+    @NonNull protected int sequenceNumber;
     public int getId() {
         return id;
     }

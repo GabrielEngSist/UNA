@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.meetchecker.R;
 import com.example.meetchecker.entities.PresenceWithClass;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class PresenceToPresenceItemAdapter extends BaseAdapter {
@@ -42,17 +43,21 @@ public class PresenceToPresenceItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter tf = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+
         View view                       = _activity.getLayoutInflater().inflate(R.layout.presence_item,parent,false);
         PresenceWithClass presence      = this._presences.get(position);
         TextView _class                 = view.findViewById(R.id.txtClass);
         TextView attendanceDate         = view.findViewById(R.id.txtAttendanceDate);
         TextView details                = view.findViewById(R.id.txtDetails);
-        TextView overall                 = view.findViewById(R.id.txtOverall);
+        TextView overall                = view.findViewById(R.id.txtOverall);
 
         _class.setText(presence._class.getName());
-        attendanceDate.setText("");
+        attendanceDate.setText("Presença registrada dia " + df.format(presence.presence.getDate()) + " às " +  tf.format(presence.presence.getDate()) );
         details.setText("");
-        overall.setText("");
+        overall.setText(presence.presence.getReviewText());
 
         return view;
     }
