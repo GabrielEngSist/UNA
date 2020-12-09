@@ -22,17 +22,22 @@ public class PresenceToPresenceItemAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return 0;
-    }
+        if(this._presences == null){
+            return 0;
+        }
+        return this._presences.size();    }
 
     @Override
-    public Object getItem(int position) {
-        return null;
+    public PresenceWithClass getItem(int position) {
+        return this._presences.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        if(this._presences == null){
+            return 0;
+        }
+        return this._presences.get(position).hashCode();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.meetchecker.ui.presences;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,24 +14,39 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.meetchecker.R;
+import com.example.meetchecker.adapters.ClassesToClasseItemAdapter;
 import com.example.meetchecker.adapters.PresenceToPresenceItemAdapter;
+import com.example.meetchecker.entities.Class;
+import com.example.meetchecker.entities.PresenceWithClass;
+import com.example.meetchecker.ui.classes.ClassesViewModel;
+
+import java.util.List;
 
 public class PresenceFragment extends Fragment {
 
-    private PresenceViewModel homeViewModel;
+    private PresenceViewModel presenceViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        PresenceToPresenceItemAdapter adapter = new PresenceToPresenceItemAdapter(null, null);
-        homeViewModel =
-                ViewModelProviders.of(this).get(PresenceViewModel.class);
+        presenceViewModel = ViewModelProviders.of(getActivity()).get(PresenceViewModel.class);
         View root = inflater.inflate(R.layout.fragment_presences, container, false);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
+        final ListView minhasPresencas = (ListView) root.findViewById(R.id.minhas_presencas);
+        new AsyncTask<Void, Void, List<PresenceWithClass>>(){
 
+            @Override
+            protected List<PresenceWithClass> doInBackground(Void... voids) {
+                return presenceViewModel.getAllPresences();
             }
-        });
+
+            @Override
+            protected void onPostExecute(List<PresenceWithClass> presenceWithClasses) {
+                super.onPostExecute(presenceWithClasses);
+                if(presenceWithClasses != null && presenceWithClasses.size() > 0){
+                    minhasPresencas.setAdapter(new PresenceToPresenceItemAdapter(presenceWithClasses, getActivity()));
+                }
+            }
+        }.execute();
+
         return root;
     }
 }

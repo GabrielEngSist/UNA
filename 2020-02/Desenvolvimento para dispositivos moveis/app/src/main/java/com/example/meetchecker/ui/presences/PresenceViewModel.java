@@ -1,19 +1,24 @@
 package com.example.meetchecker.ui.presences;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
+import android.app.Application;
 
-public class PresenceViewModel extends ViewModel {
+import androidx.lifecycle.AndroidViewModel;
 
-    private MutableLiveData<String> mText;
+import com.example.meetchecker.entities.PresenceWithClass;
+import com.example.meetchecker.repository.PresenceRepository;
 
-    public PresenceViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+import java.util.List;
+
+public class PresenceViewModel extends AndroidViewModel {
+
+    private PresenceRepository presenceRepository;
+
+    public PresenceViewModel(Application application) {
+        super(application);
+        presenceRepository = new PresenceRepository(application);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public List<PresenceWithClass> getAllPresences() {
+        return this.presenceRepository.getAllPresences();
     }
 }
