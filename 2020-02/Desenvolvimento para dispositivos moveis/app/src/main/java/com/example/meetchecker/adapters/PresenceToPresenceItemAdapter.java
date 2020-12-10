@@ -11,6 +11,7 @@ import com.example.meetchecker.entities.PresenceWithClass;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class PresenceToPresenceItemAdapter extends BaseAdapter {
 
@@ -54,9 +55,12 @@ public class PresenceToPresenceItemAdapter extends BaseAdapter {
         TextView details                = view.findViewById(R.id.txtDetails);
         TextView overall                = view.findViewById(R.id.txtOverall);
 
+        Long totalPresencasAula = this._presences.stream()
+                .filter(p -> p.presence.getClassId().equals(presence.presence.getClassId())).count();
+
         _class.setText(presence._class.getName());
         attendanceDate.setText("Presença registrada dia " + df.format(presence.presence.getDate()) + " às " +  tf.format(presence.presence.getDate()) );
-        details.setText("");
+        details.setText("Aula" + presence.presence.getSequenceNumber() + " de " + totalPresencasAula);
         overall.setText(presence.presence.getReviewText());
 
         return view;

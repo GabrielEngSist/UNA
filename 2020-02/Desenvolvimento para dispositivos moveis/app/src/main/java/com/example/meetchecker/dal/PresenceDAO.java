@@ -30,4 +30,7 @@ public interface PresenceDAO {
 
     @Query("SELECT MAX(sequenceNumber) FROM Presence WHERE classId =:classId")
     public Integer getMaxSequenceNumber(String classId);
+
+    @Query("SELECT COUNT(*) FROM Presence p WHERE p.classId == :classId")
+    public Integer getTotalPresencesByClass(String classId);
 }
