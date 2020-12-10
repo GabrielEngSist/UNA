@@ -9,5 +9,10 @@
 
     <string name="menu_classes">Classes</string>
     <string name="menu_presence">Presenças</string>
-    <string name="menu_profile">Perfil</string>
+    <string name="menu_generate_qr_code">Gerar QR Code</string>
+    <string name="txtNameText">Nome</string>
+    <string name="btnSaveText">Salvar</string>
+    <string name="txtStartText">Início</string>
+    <string name="txtEndText">Fim</string>
+    <string name="txtDateText">Data</string>
 </resources>

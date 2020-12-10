@@ -8,17 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.meetchecker.R;
-import com.example.meetchecker.adapters.ClassesToClasseItemAdapter;
 import com.example.meetchecker.adapters.PresenceToPresenceItemAdapter;
-import com.example.meetchecker.entities.Class;
 import com.example.meetchecker.entities.PresenceWithClass;
-import com.example.meetchecker.ui.classes.ClassesViewModel;
 
 import java.util.List;
 

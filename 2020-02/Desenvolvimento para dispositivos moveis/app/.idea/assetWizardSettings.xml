@@ -312,8 +312,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_school_24" />
-                            <entry key="sourceFile" value="D:\Gabriel\UNA\2020-02\Desenvolvimento para dispositivos moveis\app" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_qr_code_2_black_18dp" />
+                            <entry key="sourceFile" value="C:\Users\Gabriel O Silva\Downloads\qr_code_2-black-18dp.svg" />
                           </map>
                         </option>
                       </PersistentState>

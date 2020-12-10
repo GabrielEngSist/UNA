@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.GenerateQrCodeFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtNameText"
+            android:labelFor="@id/etxName"/>
+
+        <EditText
+            android:id="@+id/etxName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/etxDate"
+            android:text="@string/txtDateText" />
+
+        <EditText
+            android:id="@+id/etxDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="none"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/txtStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtStartText"
+            android:labelFor="@id/etxStart"/>
+
+        <EditText
+            android:id="@+id/etxStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="time"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/txtEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtEndText"
+            android:labelFor="@id/etxEnd"/>
+
+        <EditText
+            android:id="@+id/etxEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="time"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/btnSaveText"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

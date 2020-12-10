@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_classes, R.id.nav_presence, R.id.nav_profile)
+                R.id.nav_classes, R.id.nav_presence, R.id.nav_generate_qr_code)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -84,51 +84,57 @@ public class MainActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null){
             if(result.getContents() != null){
-                final QrCodeDTO qrCodeDTO = CustomGson.getInstance().fromJson(result.getContents(), QrCodeDTO.class);
-                new AsyncTask<QrCodeDTO, Void, Boolean>(){
+                try{
+                    final QrCodeDTO qrCodeDTO = CustomGson.getInstance().fromJson(result.getContents(), QrCodeDTO.class);
+                    new AsyncTask<QrCodeDTO, Void, Boolean>(){
 
-                    @Override
-                    protected Boolean doInBackground(QrCodeDTO... qrCode) {
-                        AppDatabase db = SingletonDatabase.getInstance(MainActivity.this);
+                        @Override
+                        protected Boolean doInBackground(QrCodeDTO... qrCode) {
+                            AppDatabase db = SingletonDatabase.getInstance(MainActivity.this);
 
-                        Class _class = db.classDAO().getClassById(qrCode[0].getClassId());
-                        if(_class == null){
-                            _class = new Class();
-                            _class.setGuidId(qrCode[0].getClassId());
-                            _class.setName(qrCode[0].getClassName());
-                            db.classDAO().insert(_class);
-                        }else{
-                            _class.setName(qrCode[0].getClassName());
-                            db.classDAO().update(_class);
+                            Class _class = db.classDAO().getClassById(qrCode[0].getClassId());
+                            if(_class == null){
+                                _class = new Class();
+                                _class.setGuidId(qrCode[0].getClassId());
+                                _class.setName(qrCode[0].getClassName());
+                                db.classDAO().insert(_class);
+                            }else{
+                                _class.setName(qrCode[0].getClassName());
+                                db.classDAO().update(_class);
+                            }
+
+                            Presence presence = db.presenceDAO().getPresenceById(qrCode[0].getId());
+                            if(presence == null){
+                                presence = new Presence();
+                                presence.setDate(LocalDateTime.now());
+                                presence.setClassId(qrCode[0].getClassId());
+                                presence.setGuidId(qrCode[0].getId());
+                                db.presenceDAO().insert(presence);
+                            }else{
+                                presence.setDate(LocalDateTime.now());
+                                presence.setClassId(qrCode[0].getClassId());
+                                db.presenceDAO().update(presence);
+                            }
+                            return true;
                         }
 
-                        Presence presence = db.presenceDAO().getPresenceById(qrCode[0].getId());
-                        if(presence == null){
-                            presence = new Presence();
-                            presence.setDate(LocalDateTime.now());
-                            presence.setClassId(qrCode[0].getClassId());
-                            presence.setGuidId(qrCode[0].getId());
-                            db.presenceDAO().insert(presence);
-                        }else{
-                            presence.setDate(LocalDateTime.now());
-                            presence.setClassId(qrCode[0].getClassId());
-                            db.presenceDAO().update(presence);
+                        @Override
+                        protected void onPostExecute(Boolean aBoolean) {
+                            super.onPostExecute(aBoolean);
+                            if( aBoolean == true ) {
+                                alert("Presença registrada com sucesso");
+                                MainActivity.this.setResult(1);
+                            }
                         }
-                        return true;
-                    }
+                    }.execute(qrCodeDTO);
+                }catch (Exception ex){
+                    alert("Falha ao registrar presença");
+                    MainActivity.this.setResult(0);
+                }
 
-                    @Override
-                    protected void onPostExecute(Boolean aBoolean) {
-                        super.onPostExecute(aBoolean);
-                        if( aBoolean == true ) {
-                            Toast.makeText(MainActivity.this,
-                                    "Presença registrada com sucesso", Toast.LENGTH_LONG).show();
-                            MainActivity.this.setResult(1);
-                        }
-                    }
-                }.execute(qrCodeDTO);
             }else{
                 alert("erro");
+                MainActivity.this.setResult(0);
             }
         }else{
             super.onActivityResult(requestCode, resultCode, data);
@@ -137,6 +143,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void alert(String msg){
-        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
     }
 }

@@ -13,8 +13,8 @@
             android:icon="@drawable/ic_baseline_assignment_24"
             android:title="@string/menu_presence" />
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_baseline_person_24"
-            android:title="@string/menu_profile" />
+            android:id="@+id/nav_generate_qr_code"
+            android:icon="@drawable/ic_qr_code_2_black_18dp"
+            android:title="@string/menu_generate_qr_code" />
     </group>
 </menu>
