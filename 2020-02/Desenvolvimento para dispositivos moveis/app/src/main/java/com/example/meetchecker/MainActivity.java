@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }else{
-                alert("erro");
+                alert("Não foi possível realizar a leitura");
                 MainActivity.this.setResult(0);
             }
         }else{
